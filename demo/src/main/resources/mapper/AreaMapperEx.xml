@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.mapper.AreaMapper">
+ 
+ <select id="getCitys" parameterType="java.lang.String" resultMap="BaseResultMap">
+ SELECT * FROM 
+ area WHERE
+  area_kbn =2
+ </select>
+ 
+  <select id="getAreas" parameterType="java.lang.String" resultMap="BaseResultMap">
+SELECT * FROM area WHERE follow_area_id  LIKE  CONCAT(#{_parm},'%') and area_kbn = 3;
+ </select>
+ 
+  <select id="getStreets" parameterType="java.lang.String" resultMap="BaseResultMap">
+SELECT * FROM area WHERE follow_area_id  LIKE  CONCAT(#{_parm},'%') and area_kbn = 4;
+ </select>
+ 
+</mapper>
